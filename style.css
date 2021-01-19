@@ -14,7 +14,7 @@
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
-  --color-sky: #85ddff;
+  --color-sky: rgb(41, 158, 255);
   --color-dark-sky: #85a6ff;
 
   /* Font size */
@@ -54,8 +54,14 @@
     padding-left: 0;
   }
 
-/* Typography */
+  button {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
 
+/* Typography */
 h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
@@ -118,4 +124,34 @@ p {
 
 .navbar__menu__item:hover {
   background-color: var(--color-dark-sky);
+}
+
+/* Home */
+#home {
+  background: url('imgs/home_background.png') center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+
+.home__avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 2px solid var(--color-light-white);
+}
+
+.home__title,
+.home__description {
+  /* 기본 글씨 색깔 : 검정색 */
+  color: var(--color-white);
+}
+
+.home__contact {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-white);
+  border-radius: 4px;
+  color : var(--color-white);
 }
