@@ -1,5 +1,4 @@
 /* Global */
-
 :root {
   /* Color */
   --color-white: #ffffff;
@@ -95,12 +94,20 @@ p {
 
 /* Navbar */
 #navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-sky);
   align-items: center;
   color: var(--color-white);
   padding: 16px;
+  background-color: transparent;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar--dark {
+  background-color : var(--color-sky);
+  padding: 8px;
 }
 
 .navbar__menu {
@@ -141,6 +148,7 @@ p {
 #home {
   background: url('imgs/home_background.png') center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 
@@ -462,7 +470,7 @@ p {
   transition: all var(--animation--duration) ease-in;
 }
 
-/* For below 768px screen width*/
+/* For below 768px screen width (media query)*/
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
     display: block;
