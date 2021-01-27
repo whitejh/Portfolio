@@ -13,8 +13,8 @@
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
-  --color-sky: rgb(41, 158, 255);
-  --color-dark-sky: #85a6ff;
+  --color-sky: #1e9aff;
+  --color-dark-sky: rgb(115, 192, 255);
 
   /* Font size */
   --font-large: 48px;
@@ -61,6 +61,7 @@
     cursor: pointer;
     border: none;
     outline: none;
+    padding: 0;
   }
 
 /* Typography */
@@ -172,6 +173,10 @@ p {
   border: 2px solid var(--color-white);
   border-radius: 4px;
   color : var(--color-white);
+}
+
+.home__contact:hover {
+  background-color: var(--color-orange);
 }
 
 /* Section common */
@@ -313,11 +318,12 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected, 
 .category__btn:hover {
-  background-color: var(--color-sky);
+  background-color: var(--color-dark-sky);
   color: var(--color-white);
 }
 
@@ -334,9 +340,9 @@ p {
   width: 24px;
   height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation--duration) ease-in; /* 숫자 내려오는 효과 */
 }
@@ -502,8 +508,19 @@ p {
 
 /* For below 768px screen width (media query)*/
 @media screen and (max-width: 768px) {
+  :root {
+    /*Font size*/
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
   .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-size-medium);
   }
 
   #navbar {
@@ -527,24 +544,60 @@ p {
     display: block;
   }
 
+  .section {
+    padding: 16px;
+    padding-top:  40px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
   }
 
+  .category__btn {
+    margin: 5px 0; 
+    width: 100%;
+  }
+
   .project {
     flex-grow: 1;
   }
 
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .testimonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .testimonial__avatar:nth-child(even),
+  .testimonial__avatar:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1; /*order의 default값은 원래 0*/
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom:16px;
   }
 }
